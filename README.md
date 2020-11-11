@@ -14,7 +14,7 @@ Para descargar las clases debes seguir los siguientes pasos:
 setwd("~/Downloads")
 
 # 2. Descargar el repositorio
-download.file(url = "https://github.com/taller-R/clase_13/archive/master.zip", 
+download.file(url = "https://github.com/taller-R/clase_13/archive/main.zip", 
               destfile = "clase_13.zip")
 
 # 3. Descomprimir las carpeta
