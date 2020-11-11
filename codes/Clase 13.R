@@ -96,7 +96,7 @@ all_results
 #---------------------#
 
 ### 3.0. Limpiar datos de luces nocturnas
-source(file = 'codes/Descargar y procesar datos de luces.R') # Ojo no correr esta linea en clases
+#source(file = 'codes/Descargar y procesar datos de luces.R') # Ojo no correr esta linea en clases
 
 ### 3.1. Cargar bases de dato
 data_light = readRDS(file = 'data/procesada/Night light.rds') %>% mutate(treatment = ifelse(date>=202003,1,0))
@@ -155,8 +155,9 @@ outreg_model = rockchalk::outreg(all_results[[1]],title = "Night Lights Estimati
 outreg_model
 cat(outreg_model,file = 'results/Resultados 2.tex')
 
-
 ### 4.4. Coefplot()
-
+source("https://www.r-statistics.com/wp-content/uploads/2010/07/coefplot.r.txt")
+logit = glm(modelo, subset = year == 2020, data = geih, family = binomial(link = "logit")) 
+coefplot(logit)
 
 
